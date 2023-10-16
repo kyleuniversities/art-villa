@@ -6,7 +6,16 @@ import { SiteHeader } from './SiteHeader';
  */
 export const SitePage = ({ children }) => {
   return (
-    <Container>
+    <Container
+      fluid
+      style={{
+        backgroundColor: 'rgb(255, 200, 255)',
+        minHeight: '100vh',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+        paddingTop: '5px',
+      }}
+    >
       <SiteHeader />
       {children}
     </Container>

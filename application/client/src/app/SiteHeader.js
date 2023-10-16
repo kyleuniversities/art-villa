@@ -5,7 +5,7 @@ import { Icon, Image, Menu } from 'semantic-ui-react';
  */
 export const SiteHeader = () => {
   return (
-    <Menu borderless>
+    <Menu secondary borderless>
       <SiteHeaderHomeIconItem />
       <SiteHeaderTitleItem />
     </Menu>
