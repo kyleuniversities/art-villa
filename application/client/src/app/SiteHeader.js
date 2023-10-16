@@ -1,4 +1,4 @@
-import { Icon, Menu } from 'semantic-ui-react';
+import { Icon, Image, Menu } from 'semantic-ui-react';
 
 /**
  * A header component for all site pages
@@ -14,9 +14,10 @@ export const SiteHeader = () => {
 
 // The home icon for the website
 const SiteHeaderHomeIconItem = () => {
+  const logo = require('./resources/logo.png');
   return (
     <Menu.Item>
-      <Icon name="home" size="big" />
+      <Image src={logo} />
     </Menu.Item>
   );
 };
