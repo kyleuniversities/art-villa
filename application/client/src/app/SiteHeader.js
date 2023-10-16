@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Icon, Image, Menu } from 'semantic-ui-react';
 
 /**
@@ -17,16 +18,26 @@ const SiteHeaderHomeIconItem = () => {
   const logo = require('./resources/logo.png');
   return (
     <Menu.Item>
-      <Image src={logo} />
+      <Link to="/">
+        <Image src={logo} />
+      </Link>
     </Menu.Item>
   );
 };
 
 // The title for the website
 const SiteHeaderTitleItem = () => {
+  const headerTitleStyle = {
+    color: 'black',
+    fontFamily: 'Helvetica Neue',
+    fontSize: '50px',
+    fontWeight: 'bold',
+  };
   return (
     <Menu.Item>
-      <h1>Art Villa</h1>
+      <Link to="/">
+        <span style={headerTitleStyle}>Art Villa</span>
+      </Link>
     </Menu.Item>
   );
 };
