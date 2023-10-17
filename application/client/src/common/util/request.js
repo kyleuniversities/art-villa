@@ -1,9 +1,18 @@
+// Default api host for requests
+export const DEFAULT_HOST = 'http://localhost:5000/api';
+
+/**
+ * Utility function for finding the api host
+ */
+export const deriveApiHost = () => {
+  return process.env['REACT_APP_API_FULL_HOST'] || DEFAULT_HOST;
+};
+
 /**
  * Utility function used for api requests to the backend
  */
 export const request = async (url, options = {}) => {
-  const apiHost =
-    process.env['REACT_APP_API_FULL_HOST'] || 'http://localhost:5000';
+  const apiHost = deriveApiHost();
   const fullUrl = `${apiHost}${url}`;
   return fullRequest(fullUrl, options);
 };
