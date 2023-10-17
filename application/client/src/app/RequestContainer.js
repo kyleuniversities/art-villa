@@ -1,13 +1,13 @@
 import { Button, Container, Form, Segment, TextArea } from 'semantic-ui-react';
 import { useState } from 'react';
-import { fullRequest } from '../common/util/request';
+import { deriveApiHost, fullRequest } from '../common/util/request';
 import { MultilineBreak } from './MultilineBreak';
 
 /**
  * Container for making a GET request
  */
 export const RequestContainer = () => {
-  const [fullUrl, setFullUrl] = useState('http://localhost:5000/');
+  const [fullUrl, setFullUrl] = useState(deriveApiHost());
   const [res, setRes] = useState('');
   return (
     <RequestContainerSegment

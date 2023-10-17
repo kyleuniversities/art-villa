@@ -25,7 +25,7 @@ router.post('/hello', function (req, res) {
 app.use(express.json());
 
 // Mount router
-app.use('/', router);
+app.use('/api', router);
 
 // Mount app at port
 app.listen(port, () => {
