@@ -3,9 +3,9 @@ import { RequestContainer } from '../RequestContainer';
 import { SitePage } from '../SitePage';
 
 /**
- * The Home Page for the app
+ * The Request Page for the app
  */
-export const HomePage = () => {
+export const RequestPage = () => {
   useHtmlTitle('Art Villa');
   return (
     <SitePage>
