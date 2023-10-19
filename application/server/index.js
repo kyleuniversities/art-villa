@@ -1,9 +1,17 @@
 /**
  * The main server file
  */
+
+// Import server dependencies
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
+const { Model } = require('objection');
+const knexfile = require('./knexfile');
+
+// Set up knex
+const knex = require('knex')(knexfile.development);
+Model.knex(knex);
 
 // Initialize app
 const app = express();
