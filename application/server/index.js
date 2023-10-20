@@ -1,9 +1,17 @@
 /**
  * The main server file
  */
+
+// Import server dependencies
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
+const { Model } = require('objection');
+const knexfile = require('./knexfile');
+
+// Set up knex
+const knex = require('knex')(knexfile.development);
+Model.knex(knex);
 
 // Initialize app
 const app = express();
@@ -26,6 +34,9 @@ app.use(express.json());
 
 // Mount router
 app.use('/api', router);
+
+// Mount routes
+app.use('/api', require('./routers/post-router'));
 
 // Mount app at port
 app.listen(port, () => {
