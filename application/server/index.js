@@ -35,6 +35,9 @@ app.use(express.json());
 // Mount router
 app.use('/api', router);
 
+// Mount routes
+app.use('/api', require('./routers/post-router'));
+
 // Mount app at port
 app.listen(port, () => {
   console.log(`Example app listening at ${port}.`);

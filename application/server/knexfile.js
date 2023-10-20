@@ -3,18 +3,20 @@ require('dotenv').config();
 // TODO: Index.js and knex migration
 
 // Connection data
-const AWS_RDS_HOST = process.env['AWS_RDS_HOST'];
-const AWS_RDS_USERNAME = process.env['AWS_RDS_USERNAME'];
-const AWS_RDS_PASSWORD = process.env['AWS_RDS_PASSWORD'];
+const DATABASE_HOST = process.env['DATABASE_HOST'];
+const DATABASE_USERNAME = process.env['DATABASE_USERNAME'];
+const DATABASE_PASSWORD = process.env['DATABASE_PASSWORD'];
+
+// TODO: Knex Migrations (Make it work)
 
 // Function for creating database setup
 const makeSqlBuilder = (databaseKey) => {
   return {
     client: 'mysql2',
     connection: {
-      host: AWS_RDS_HOST,
-      user: AWS_RDS_USERNAME,
-      password: AWS_RDS_PASSWORD,
+      host: DATABASE_HOST,
+      user: DATABASE_USERNAME,
+      password: DATABASE_PASSWORD,
       database: process.env[databaseKey],
     },
     migrations: {
@@ -25,7 +27,7 @@ const makeSqlBuilder = (databaseKey) => {
 
 // Object for database connection
 const knexfile = {
-  development: makeSqlBuilder('AWS_RDS_DEVELOPMENT_DATABASE'),
+  development: makeSqlBuilder('DATABASE_DATABASE'),
 };
 
 // Exports the database connection
