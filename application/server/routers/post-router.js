@@ -40,7 +40,7 @@ router.post('/posts', async (req, res) => {
     return res.send(post);
   } catch (error) {
     return res.status(500).json({
-      error_message: 'Server Error',
+      error_message: error.message,
     });
   }
 });
@@ -66,7 +66,7 @@ router.get('/posts/:id', async (req, res) => {
     return res.send(post);
   } catch (error) {
     return res.status(500).json({
-      error_message: 'Server Error',
+      error_message: error.message,
     });
   }
 });
@@ -76,10 +76,10 @@ router.get('/posts/:id', async (req, res) => {
 router.patch('/posts/:id', async (req, res) => {
   try {
     const post = await Post.query().patch(req.body).findById(req.params.id);
-    return res.send(post);
+    return res.send({ message: 'Updated!' });
   } catch (error) {
     return res.status(500).json({
-      error_message: 'Server Error',
+      error_message: error.message,
     });
   }
 });
@@ -89,10 +89,10 @@ router.patch('/posts/:id', async (req, res) => {
 router.delete('/posts/:id', async (req, res) => {
   try {
     const post = await Post.query().deleteById(req.params.id);
-    return res.send(post);
+    return res.send({ message: 'Deleted!' });
   } catch (error) {
     return res.status(500).json({
-      error_message: 'Server Error',
+      error_message: error.message,
     });
   }
 });
