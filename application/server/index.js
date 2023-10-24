@@ -37,6 +37,7 @@ app.use('/api', router);
 
 // Mount routes
 app.use('/api', require('./routers/post-router'));
+app.use('/api', require('./routers/user-router'));
 
 // Mount app at port
 app.listen(port, () => {
