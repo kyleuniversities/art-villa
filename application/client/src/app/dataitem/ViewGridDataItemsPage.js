@@ -102,7 +102,7 @@ const DataItemsSearchSegment = ({
   query,
 }) => {
   return (
-    <Segment>
+    <Segment style={{ backgroundColor: 'rgb(255, 235, 255)' }}>
       <Header as="h1">{headerTitle}</Header>
       <Search
         size="big"
@@ -144,6 +144,7 @@ const DataItemsMenuColumn = ({ filterToken, setFilterToken, filterTokens }) => {
         {filterTokens.map((listedFilterToken) => (
           <Menu.Item
             name={listedFilterToken}
+            style={{ backgroundColor: 'rgb(255,255,255)' }}
             active={filterToken === listedFilterToken}
             onClick={(e, { name }) => setFilterToken(name)}
           />
@@ -214,7 +215,7 @@ const DataGridItemsCard = ({
           marginLeft: 11,
           marginRight: 11,
           width: 200,
-          height: 480,
+          height: 400,
         }}
       >
         <Image src={`${itemImage}`} />
